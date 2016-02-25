@@ -12,7 +12,6 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     images = models.ImageField(upload_to='static/images', blank=True)
     teg = models.ManyToManyField(Teg)
-    publish = models.BooleanField(default=False)
 
     def publish(self):
         self.save()
