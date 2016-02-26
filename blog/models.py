@@ -1,4 +1,5 @@
 from django.db import models
+from PIL import Image
 
 class Teg(models.Model):
     name = models.CharField(max_length=200)
