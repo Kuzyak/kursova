@@ -11,7 +11,7 @@ class Teg(models.Model):
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    images = models.ImageField(upload_to='static/images', blank=True)
+    images = models.ImageField(upload_to='new', blank=True)
     teg = models.ManyToManyField(Teg)
 
     def publish(self):

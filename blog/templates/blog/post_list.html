@@ -1,19 +1,11 @@
-<html>
-    <head>
-        <title>Django blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Django Blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-          {% for post in posts %}
-              <div>
-                  <h1><a href="">{{ post.title }}</a></h1>
-                  {{ post.images }}
-                  <img src="{{ post.images.url }}" alt="Don`t work foto">
-              </div>
-          {% endfor %}
-
-    </body>
-</html>
+{% block content %}
+      {% for post in posts %}
+      <div class="col-md-3 col-sm-4 col-xs-6">
+          <a href="{% url 'post_detail' pk=post.pk %}">
+            <img class="img-responsive" src="{{ post.images.url }}" alt="Error"/>
+          </a>
+      </div>
+      {% endfor %}
+{% endblock %}
