@@ -1,12 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    <div class="row">
       {% for post in posts %}
       <div class="col-md-3 col-sm-4 col-xs-6">
-          <a href="{% url 'post_detail' pk=post.pk %}">
+          <a href="{% url 'foto_view' pk=post.pk %}">
             <img class="img-responsive" src="{{ post.images.url }}" alt="Error"/>
           </a>
       </div>
       {% endfor %}
-      
+    </div>
+
 {% endblock %}
