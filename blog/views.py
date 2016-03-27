@@ -33,6 +33,7 @@ def applyfilter(pk, preset):
     newfile =  f[0] + '-new.' + f[1]
     f = newfile.split('/')
     newfilename = f[-1]
+    infile.replace("/","//")
     im = Image.open(infile)
     if preset == 'gray':
         im = ImageOps.grayscale(im)
@@ -78,7 +79,7 @@ def foto_edit(request, pk):
         if form.is_valid():
             preset = request.POST['preset']
             newfilename = applyfilter(pk,preset)
-            return render_to_response('blog/foto_out.html', {'newfilename':newfilename,'post': post}, context_instance = RequestContext(request))
+            return render_to_response('blog/foto_out.html', {'newfilename':newfilename}, context_instance = RequestContext(request))
     else:
         form = PostForm(instance=post)
     return render_to_response('blog/foto_edit.html',{'form':form,'post': post},context_instance = RequestContext(request))
