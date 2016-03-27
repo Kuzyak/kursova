@@ -5,7 +5,7 @@
       {% for post in posts %}
       <div class="col-md-3 col-sm-4 col-xs-6">
           <a href="{% url 'foto_view' pk=post.pk %}">
-            <img class="img-responsive" src="{{ post.images.url }}" alt="Error"/>
+            <img src="{{ post.smale_images.url }}" width="100%" alt="Error"/>
           </a>
       </div>
       {% endfor %}

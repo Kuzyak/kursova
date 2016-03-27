@@ -2,6 +2,7 @@
 
 {% block content %}
           <h1>{{ post.title }}</h1>
+          <a class="btn btn-default" href="{% url 'foto_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
           <img src="/{{ post.images.url }}" class="img-responsive"  alt="Error"/>
-          
+
 {% endblock %}

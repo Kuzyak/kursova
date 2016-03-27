@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Edit post</h1>
+    <form method="POST">{% csrf_token %}
+      <img src="/{{ post.images.url }}" width="300px"  alt="Error"/></br>
+      <table border="0" >
+        <tr>
+          <td><input type="radio" name="preset" value="gray"><label for="Gray">&nbsp;Gray</label></td>
+          <td><input type="radio" name="preset" value="sepia"><label for="Sepia">&nbsp;Sepia</label></td>
+          <td><input type="radio" name="preset" value="poster"><label for="Poster">&nbsp;Poster</label></td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="preset" value="blur"><label for="Blur">&nbsp;Blur</label></td>
+          <td><input type="radio" name="preset" value="edge"><label for="Edge">&nbsp;Edge</label></td>
+          <td><input type="radio" name="preset" value="solar"><label for="Solar">&nbsp;Solar</label></td>
+        </tr>
+      </table>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
